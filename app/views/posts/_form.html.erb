@@ -1,0 +1,16 @@
+<div class="page-wrapper">
+
+  <%= form_for @post do |f| %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+
+    <%= f.label :body, "Post" %>
+    <%= f.text_area :body, rows: "15", class: 'form-control' %>
+
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  <% end %>
+</div>

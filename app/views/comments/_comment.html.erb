@@ -1,0 +1,21 @@
+<div class="comment">
+  <div class="coment-content">
+    <p class="comment-body"><%= simple_format(comment.body) %></p>
+    <p class="comment-date">Added <%= time_ago_in_words(comment.created_at)%>
+                                               ago by <%= comment.name %></p>
+    <% if current_user.try(:admin?) %>
+      <%= link_to "Delete", post_comment_path(comment.post, comment),
+                        method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+
+  </div>
+</div>
+
+
+<div class="like-dislike">
+  <%= link_to "Like", like_post_comment_path(@post, comment), method: :put %>
+  <span><%= comment.get_likes.size %></span>
+  <%= link_to "Dislike", dislike_post_comment_path(@post, comment),
+                                                          method: :put %>
+  <span><%= comment.get_dislikes.size %></span>
+</div>

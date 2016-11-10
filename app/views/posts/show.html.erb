@@ -1,0 +1,34 @@
+<% provide(:title, @post.title) %>
+
+<div class="jumbotron center jumbotron-show">
+  <h1 class="post-in-jumbotron">"<%= @post.title %>"</h1>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8 post-show">
+    <%= link_to "← All posts", blog_path, id: "all-posts" %>
+    <% if current_user.try(:admin?) %>
+      <%= link_to "Delete", post_path(@post), method: :delete,
+                               data: { confirm: "Are you sure?"} %>
+      <span class="edit-delete"> | </span>
+      <%= link_to "Edit post", edit_post_path(@post) %>
+    <% end %>
+    <h1 class="post-header"><%= @post.title %></h1>
+    <p><%= simple_format(@post.body) %></p>
+    <p class="date-post"> Created <%= time_ago_in_words(@post.created_at) %> ago</p>
+  </div>
+</div>
+
+<div class="comment-wrapper">
+  <div id="comments">
+    <h3 class="count-comments"><%= @post.comments.count %> Comments</h3>
+    <%= render @post.comments %>
+    <% if logged_in? %>
+      <h4 class="comment-form-header">Add a comment:</h4>
+      <%= render 'comments/form' %>
+    <% else %>
+      <p class="log-in-comment">Please <%= link_to "Log in", login_path %> to add a comment</p>
+    <% end %>
+  </div>
+</div>

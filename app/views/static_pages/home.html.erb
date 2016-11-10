@@ -1,0 +1,99 @@
+<% provide(:title, "Home") %>
+
+<div class="jumbotron center" >
+  <% if logged_in? %>
+    <h1 class="home-page-h1"> Welcome on Sample App!</h1>
+    <h3>Do you want to read something? Click on the link below and check out
+        our new blog posts:</h3>
+    <%= link_to "Visit blog", blog_path, class: "btn btn-primary btn-custom" %>
+  <% else %>
+    <h1 class="home-page-h1">Sample App</h1>
+    <h3>Join us and find out more!</h3>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-primary btn-custom" %>
+  <% end %>
+ </div>
+
+<section class="How-it-works container">
+  <div class="row-fluid">
+    <div class="span8" id="col">
+      <h3 class="header--small">
+      <span class="circle">1</span>
+        Cupcake ipsum dolor
+      </h3>
+      <h5 class="description--small">Chocolate bar jelly beans tart jelly beans
+        gummi bears. Jelly apple pie croissant halvah macaroon croissant.</h5>
+    </div>
+    <div class="span8">
+      <h3 class="header--small">
+        <span class="circle">2</span>
+        Caramels bear claw
+      </h3>
+      <h5 class="description--small">Apple pie ice cream pie tart cotton candy
+        gummi bears sugar plum jelly beans sugar plum.</h5>
+    </div>
+    <div class="span8">
+      <h3 class="header--small">
+        <span class="circle">3</span>
+        Chocolate cookie
+      </h3>
+      <h5 class="description--small">Gummi bears gummi bears oat cake gingerbread
+        sesame snaps gingerbread dragée chocolate marzipan.</h5>
+    </div>
+  </div>
+</section>
+
+<section class="info-container">
+  <div class="info">
+      <h5 class="info-content"> "Far far away, behind the word mountains,
+        far from the countries Vokalia and Consonantia, there live the blind texts.
+        Separated they live in Bookmarksgrove right at the coast of the Semantics,
+        a large language ocean. A small river named Duden flows by their place and
+        supplies it with the necessary regelialia. It is a paradisematic country,
+        in which roasted parts of sentences fly into your mouth. Even the all-powerful
+        Pointing has no control about the blind texts it is an almost unorthographic
+        life One day however a small line of blind text by the name of Lorem Ipsum
+        decided to leave for the far World of Grammar."
+      </h5>
+  </div>
+</section>
+
+<section class="for-who container">
+  <h1 class="logo-bottom">SampleApp.com</h1>
+  <div class="row-fluid">
+    <div class="span8">
+      <h3 class="header--who"> For partners </h3>
+      <h5 class="description--who">
+        <ul class="no-bullets">
+          <li><%=link_to "About", about_path %></li>
+          <li><%=link_to "Contact", contact_path %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+        </ul>
+      </h5>
+    </div>
+    <div class="span8">
+      <h3 class="header--who"> For customers </h3>
+      <h5 class="description--who">
+        <ul class="no-bullets">
+          <li><%=link_to "About", about_path %></li>
+          <li><%=link_to "Contact", contact_path %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+        </ul>
+      </h5>
+    </div>
+    <div class="span8">
+      <h3 class="header--who"> Sample App </h3>
+      <h5 class="description--who">
+        <ul class="no-bullets">
+          <li><%=link_to "Meet us", "#"%></li>
+          <li><%=link_to "Media", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+          <li><%=link_to "Sample Link", "#" %></li>
+        </ul>
+      </h5>
+    </div>
+  </div>
+</section>

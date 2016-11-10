@@ -1,0 +1,18 @@
+
+<div class="row">
+  <div class="col-md-8 comment-form">
+    <%= form_for ([@post, @post.comments.build]) do |f| %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+
+      <%= f.label :name, "Nickname" %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :body, "Comment" %>
+      <%= f.text_area :body, rows: "7", class: 'form-control' %>
+
+      <%= f.submit "Comment" %>
+    <% end %>
+  </div>
+</div>
