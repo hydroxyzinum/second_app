@@ -103,7 +103,7 @@ p {
 
 .jumbotron {
   color: white;
-  background-image: url('2.jpg');
+  background-image: image-url('2.jpg');
   background-position: 50% 10%;
   background-repeat: no-repeat;
   margin-top: -90px;
@@ -113,23 +113,23 @@ p {
 }
 
 .jumbotron-blog {
-  background-image: url('3.jpg');
+  background-image: image-url('3.jpg');
   background-position: 50% center;
   background-size: 100%;
 }
 
 .jumbotron-show {
-  background-image: url('4.jpg');
+  background-image: image-url('4.jpg');
 }
 
 .jumbotron-help {
-  background-image: url('5.jpg');
+  background-image: image-url('5.jpg');
   background-position: 70% center;
   margin-bottom: 400px;
 }
 
 .jumbotron-blank-page {
-  background-image: url('4.jpg');
+  background-image: image-url('4.jpg');
   margin-bottom: 400px;
 }
 
