@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to request.referrer
+      redirect_to @current_user
     else
       render 'edit'
     end
